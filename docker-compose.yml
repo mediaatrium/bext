@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  bext:
+    container_name: bext
+    restart: unless-stopped
+    build:
+      context: ./
+    command: yarn start
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.bext.rule=Host(`www.bext.com`)'
+      - 'traefik.http.routers.bext.entrypoints=https'
+      - 'traefik.http.routers.bext.tls.certresolver=httpresolver'
+      - 'traefik.docker.network=traefik_network'
+    networks:
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true
