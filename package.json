@@ -1,7 +1,7 @@
 {
 	"name": "bext",
 	"version": "1.0.0",
-	"description": "A boilerplate for Websites built with Next.js",
+	"description": "A boilerplate for websites built with Next.js",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",

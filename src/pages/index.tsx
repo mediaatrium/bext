@@ -6,8 +6,8 @@ const Index = () => (
 		<div className="w-20">
 			<Image src={logo} />
 		</div>
-		<h1 className="is-5 font-bold">Bext</h1>
-		<p>A boilerplate for Websites built with Next.js</p>
+		<h1 className="is-5 font-bold">bext</h1>
+		<p>A boilerplate for websites built with Next.js</p>
 	</section>
 );
 export default Index;
