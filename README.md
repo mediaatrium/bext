@@ -1,6 +1,6 @@
 # bext
 
-A boilerplate for Websites built with Next.js
+A boilerplate for websites built with Next.js
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
