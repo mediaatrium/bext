@@ -37,7 +37,8 @@ npm dev
 ```
 
 4. Deploy
-   For the deployment, we use a dedicated server on which our various services run in Docker containers. These are connected to the internet via the reverse proxy [Traefik](https://traefik.io/traefik/). Of course, one can also use the services from [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/) & Co.
+
+For the deployment, we use a dedicated server on which our various services run in Docker containers. These are connected to the internet via the reverse proxy [Traefik](https://traefik.io/traefik/). Of course, one can also use the services from [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/) & Co.
 
 ```bash
 docker compose up -d --build
