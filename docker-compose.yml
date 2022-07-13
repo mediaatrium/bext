@@ -12,6 +12,23 @@ services:
       - 'traefik.http.routers.bext.rule=Host(`www.bext.com`)'
       - 'traefik.http.routers.bext.entrypoints=https'
       - 'traefik.http.routers.bext.tls.certresolver=httpresolver'
+      - 'traefik.http.routers.bext.middlewares=security-headers'
+      - 'traefik.http.middlewares.security-headers.headers.accesscontrolallowmethods=GET, OPTIONS, PUT, POST, DELETE, HEAD, PATCH'
+      - 'traefik.http.middlewares.security-headers.headers.accesscontrolmaxage=100'
+      - 'traefik.http.middlewares.security-headers.headers.addvaryheader=true'
+      - 'traefik.http.middlewares.security-headers.headers.hostsproxyheaders=X-Forwarded-Host'
+      - 'traefik.http.middlewares.security-headers.headers.sslredirect=true'
+      - 'traefik.http.middlewares.security-headers.headers.sslproxyheaders.X-Forwarded-Proto=https'
+      - 'traefik.http.middlewares.security-headers.headers.stsseconds=63072000'
+      - 'traefik.http.middlewares.security-headers.headers.stsincludesubdomains=true'
+      - 'traefik.http.middlewares.security-headers.headers.stspreload=true'
+      - 'traefik.http.middlewares.security-headers.headers.forcestsheader=true'
+      - 'traefik.http.middlewares.security-headers.headers.permissionspolicy=camera=(), accelerometer=(), battery=(), gamepad=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=()'
+      - 'traefik.http.middlewares.security-headers.headers.framedeny=true'
+      - "traefik.http.middlewares.security-headers.headers.contentsecuritypolicy=default-src 'none'; connect-src 'self'; font-src 'self'; img-src 'self' data:; script-src 'self' https://umami.mediaatrium.de/umami.js; style-src 'self' 'unsafe-inline'"
+      - 'traefik.http.middlewares.security-headers.headers.contenttypenosniff=true'
+      - 'traefik.http.middlewares.security-headers.headers.browserxssfilter=true'
+      - 'traefik.http.middlewares.security-headers.headers.referrerpolicy=same-origin'
       - 'traefik.docker.network=traefik_network'
     networks:
       - traefik_network
