@@ -16,7 +16,14 @@
 
 @layer base {
 	html {
-		@apply bg-gray text-html;
+		scroll-behavior: smooth;
+		@apply bg-gray;
+		@apply text-html;
+		@apply 2xl:text-html2xl;
+		@apply xl:text-htmlxl;
+		@apply lg:text-htmllg;
+		@apply md:text-htmlmd;
+		@apply sm:text-htmlsm;
 	}
 	body {
 		@apply font-roboto text-1.6 text-white;
@@ -24,6 +31,15 @@
 }
 
 @layer components {
+	.is-2 {
+		@apply text-2;
+	}
+	.is-3 {
+		@apply text-3;
+	}
+	.is-4 {
+		@apply text-4;
+	}
 	.is-5 {
 		@apply text-5;
 	}

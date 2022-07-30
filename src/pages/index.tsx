@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import Navigation from '../components/Navigation';
 import { logo } from '../utils/images';
 
 const Index = () => (
 	<section className="flex h-screen flex-col items-center justify-center space-y-1">
+		<Navigation />
 		<div className="w-20">
 			<Image src={logo} />
 		</div>
