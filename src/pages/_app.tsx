@@ -14,7 +14,7 @@ const App = ({ Component, pageProps, router }) => (
 			<meta charSet="utf-8" />
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		</Head>
-		<AnimatePresence exitBeforeEnter>
+		<AnimatePresence mode="wait">
 			<motion.main
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
